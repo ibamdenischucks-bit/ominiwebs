@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000;
+    color: white;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image:url("static/images/logo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+/* Dark overlay */
+
+.overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.75) 40%,
+            rgba(0, 0, 0, 0.35) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    padding: 55px 8%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    background: #ff1744;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   MAIN TEXT
+========================= */
+
+.hero-text {
+    margin-top: 115px;
+
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: clamp(45px, 6vw, 82px);
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+.hero-text p {
+    margin-top: 35px;
+
+    max-width: 450px;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   BOTTOM AREA
+========================= */
+
+.bottom-left {
+    position: absolute;
+
+    left: 8%;
+    bottom: 65px;
+}
+
+.bottom-left h3 {
+    font-size: 17px;
+
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+
+.bottom-right {
+    position: absolute;
+
+    right: 8%;
+    bottom: 60px;
+
+    width: 330px;
+}
+
+.bottom-right p {
+    color: #999;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+    display: inline-block;
+
+    padding: 14px 35px;
+
+    background: #ff1744;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    border-radius: 3px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #ff4568;
+
+    transform: translateY(-2px);
+}
+
+.buttonx {
+    display: inline-block;
+
+    padding: 14px 35px;
+
+    background: #0a0a0e;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    border-radius: 3px;
+
+    transition: 0.3s;
+    border: solid 1px white;
+}
+.buttony {
+    display: inline-block;
+    padding: 14px 35px;
+    background: rgba(241, 7, 241, 0.952);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+
+    border-radius: 2rem;
+
+    transition: 0.3s;
+    border: solid 1px white;
+}
+
+.button:hover {
+    background: #3a3e3f11;
+
+    transform: translateY(-2px);
+}
+
+.buttony:hover {
+    background: #3a3e3f11;
+    transform: translateY(-2px);
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .content {
+        padding: 35px 25px;
+    }
+
+    .hero {
+        background-position: 65% center;
+    }
+
+    .hero-text {
+        margin-top: 100px;
+    }
+
+    .hero-text h1 {
+        font-size: 45px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-text p {
+        font-size: 13px;
+
+        max-width: 320px;
+    }
+
+    .bottom-left {
+        position: relative;
+
+        left: auto;
+        bottom: auto;
+
+        margin-top: 100px;
+    }
+
+    .bottom-left h3 {
+        font-size: 14px;
+    }
+
+    .bottom-right {
+        position: relative;
+
+        right: auto;
+        bottom: auto;
+
+        width: 100%;
+
+        margin-top: 35px;
+    }
+
+}

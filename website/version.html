@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Latest Versions</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, Arial, sans-serif;
+            background: #ffffff;
+            color: #171717;
+        }
+
+        /* PAGE */
+
+        .versions-page {
+            min-height: 100vh;
+            padding: 70px 7%;
+        }
+
+        /* HEADER */
+
+        .header {
+            max-width: 900px;
+            margin-bottom: 55px;
+        }
+
+        .header .small-title {
+            color: #6747e8;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .header h1 {
+            font-size: 52px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #777;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+
+        /* VERSION CONTAINER */
+
+        .versions {
+            max-width: 1100px;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+
+        /* VERSION CARD */
+
+        .version-card {
+            display: grid;
+            grid-template-columns: 45% 55%;
+
+            min-height: 360px;
+
+            background: #f8f8fb;
+
+            border-radius: 32px;
+
+            overflow: hidden;
+
+            border: 1px solid #eeeeef;
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.06);
+
+            transition: 0.3s ease;
+        }
+
+        .version-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.10);
+        }
+
+
+        /* IMAGE */
+
+        .version-image {
+            min-height: 360px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ece8ff,
+                    #dcd5ff
+                );
+        }
+
+        .version-image img {
+            width: 100%;
+            max-width: 430px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 20px 40px rgba(60, 40, 160, 0.18);
+
+            display: block;
+        }
+
+
+        /* CONTENT */
+
+        .version-content {
+            padding: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .latest {
+            width: fit-content;
+
+            padding: 7px 13px;
+
+            background: #e9e4ff;
+            color: #6042df;
+
+            border-radius: 50px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+        .version-content h2 {
+            font-size: 34px;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 8px;
+        }
+
+        .version-date {
+            color: #999;
+
+            font-size: 14px;
+
+            margin-bottom: 22px;
+        }
+
+        .version-description {
+            color: #666;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+
+            max-width: 480px;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* BUTTON */
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .view-btn {
+            text-decoration: none;
+
+            background: #6042df;
+
+            color: white;
+
+            padding: 13px 22px;
+
+            border-radius: 13px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.2s ease;
+        }
+
+        .view-btn:hover {
+            background: #4d32c8;
+        }
+
+        .download-btn {
+            text-decoration: none;
+
+            color: #555;
+
+            padding: 13px 18px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        /* OLDER VERSIONS */
+
+        .older-title {
+            margin-top: 35px;
+            margin-bottom: 10px;
+
+            font-size: 14px;
+
+            color: #999;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            .versions-page {
+                padding: 45px 20px;
+            }
+
+            .header h1 {
+                font-size: 40px;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+
+            .version-card {
+                grid-template-columns: 1fr;
+            }
+
+            .version-image {
+                min-height: 260px;
+            }
+
+            .version-content {
+                padding: 32px 25px;
+            }
+
+            .version-content h2 {
+                font-size: 28px;
+            }
+        }
+        .logo {
+    font-size: 22px;
+
+    font-weight: bold;
+
+    letter-spacing: -1px;
+}
+.headerx {
+    height: 70px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    margin-bottom: 25px;
+}
+.menu {
+    display: flex;
+
+    gap: 25px;
+
+    font-size: 13px;
+
+    color: #555;
+}
+
+    </style>
+</head>
+
+
+<body>
+
+    <main class="versions-page">
+
+        <!-- HEADER -->
+         <header>
+    <div class="headerx">
+        <div class="logo">
+            PLUGAI
+        </div>
+
+        <div class="menu">
+            <span><a href="index.html" style="text-decoration: none;color: #111;">Home</a></span>
+            <span><a href="setup.html" style="text-decoration: none;color: #111;">Tutorial</a></span>
+            <span><a href="box.html" style="text-decoration: none;color: #111;">About</a></span>
+            <span>Help</span>
+             <span><a href="version.html" style="text-decoration: none;color: #111;">Version</a></span>
+        </div>
+</div>
+         </header>
+        
+        <section class="header">
+
+            <div class="small-title">
+                Release history
+            </div>
+
+            <h1>
+                Latest Versions
+            </h1>
+
+            <p>
+                Explore the latest versions of our application,
+                new improvements, features and updates for ominisignal.
+            </p>
+
+        </section>
+
+
+        <!-- VERSION LIST -->
+
+        <section class="versions">
+
+
+            <!-- VERSION 1 -->
+
+            <article class="version-card">
+
+                <div class="version-image">
+
+                    <!-- Replace this with your actual screenshot -->
+                    <img
+                        src="static/images/version1.png"
+                        alt="App version 1 screenshot"
+                    >
+
+                </div>
+
+
+                <div class="version-content">
+
+                    <span class="latest">
+                        Latest version
+                    </span>
+
+                    <h2>
+                        Version 0.5.0
+                    </h2>
+
+                    <div class="version-date">
+                        Released September 10, 2026
+                    </div>
+
+                    <p class="version-description">
+                        The newest version of the application with
+                        improved performance, a redesigned interface
+                        and a smoother overall experience.
+                    </p>
+
+
+                    <div class="actions">
+
+                        <a href="#" class="view-btn">
+                            View update
+                        </a>
+
+                        <a onclick="download()" class="download-btn">
+                            Download
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VERSION 0.9 -->
+
+            <article class="version-card">
+
+                <div class="version-image">
+
+                    <img
+                        src="static/images/logov2.png"
+                        alt="App version 0.9 screenshot"
+                    >
+
+                </div>
+
+
+                <div class="version-content">
+
+                    <h2>
+                        Version 1.0.0
+                    </h2>
+
+                    <div class="version-date">
+                        Excepted Release unknown
+                    </div>
+
+                    <p class="version-description">
+                        Added the initial application interface,
+                        account management and the first core
+                        features.
+                    </p>
+
+                    <div class="actions">
+
+                        <a href="#" class="view-btn">
+                            View update
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+    </main>
+<script>
+
+async function download(){
+     window.location.href = "https://github.com/ibamdenischucks-bit/ominisite/releases/download/app-v1/ominisignalv1.zip"
+    alert("download has already started!")
+}
+
+</script>
+</body>
+</html>
